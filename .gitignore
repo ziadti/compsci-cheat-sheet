@@ -1,0 +1,25 @@
+# Compiled LaTeX files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.synctex.gz
+*.synctex(busy)
+*.pdfsync
+
+# Editor backup files
+*~
+*.bak
+*.swp
+*.tmp
+
+# Other files
+*.dvi
+*.ps
