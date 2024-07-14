@@ -244,14 +244,15 @@
                 \verb|LOAD= X|  & M[0]   $\leftarrow$ X                 &                 & \texttt{PC} $\leftarrow l$        \\
                 \verb|LOAD* X|  & M[0]   $\leftarrow$ M[M[X]]           & \verb|JGT l|    & se M[0]$>$0                       \\
                 \verb|STORE X|  & M[X] $\leftarrow$ M[0]                &                 & \texttt{PC} $\leftarrow l$        \\
-                \verb|STORE* X| & M[X]   $\leftarrow$ M[M[0]]           & \verb|JGZ l|    & se M[0]$\geq$0                    \\
+                \verb|STORE* X| & M[M[X]]   $\leftarrow$ M[0]           & \verb|JGZ l|    & se M[0]$\geq$0                    \\
                 \verb|ADD X|    & M[0]  $\leftarrow$ M[0] + M[X]        &                 & \texttt{PC} $\leftarrow l$        \\
                 \verb|SUB X|    & M[0]  $\leftarrow$ M[0] - M[X]        & \verb|JLT l|    & se M[0]$<$0                       \\
                 \verb|MUL X|    & M[0]  $\leftarrow$ M[0] $\times$ M[X] &                 & \texttt{PC} $\leftarrow l$        \\
                 \verb|DIV X|    & M[0]  $\leftarrow$ M[0] / M[X]        & \verb|JLZ l|    & se M[0]$\leq$0                    \\
                 \verb|WRITE X|  & \texttt{Out} $\leftarrow$ M[X]        &                 & \texttt{PC} $\leftarrow l$        \\
                 \verb|WRITE= X| & \texttt{Out} $\leftarrow$ X           & \verb|HALT|     & termina exec.                     \\
-        \end{tabular}
+        \end{tabular} \\ 
+        Esistono le varianti con \verb|=| e \verb|*| anche per le istruzioni \verb!ADD!, \verb|SUB|, \verb|MUL| e \verb|DIV|.
         \subsection{Logica monadica del I ordine (MFO)}
         La logica monadica del I ordine è un modello di calcolo in grado di riconoscere linguaggi star-free, ossia linguaggi regolari esprimibili senza l'utilizzo della star di Kleene. La sintassi di una formula $\varphi$ della logica monadica del I ordine è  $\varphi := a(x) \ | \ x < y \ | \ \lnot \varphi \ | \ \varphi \land \varphi \ | \ \forall x (\varphi)$ \\
         Dove $x,y \in \mathbb{N}$, $a(x)$ è un predicato unario che è vero se e solo se alla posizione $x$ c'è il simbolo $a$ e $<$ è un predicato binario che corrisponde alla relazione di minore. Partendo da questi assiomi si può definire il connettivo $\lor$, il quantificatore esistenziale $\exists$, le relazioni aritmetiche $=, \leq, >, \geq$ e somme e sottrazioni tra variabili e costanti ($y=x \pm k$). Si possono inoltre definire abbreviazioni ausiliarie, come:\\
